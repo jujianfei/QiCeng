@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
 
 namespace WindowsFormsApplication1
 {
-    class SqlserverUser:IUser
+    class AccessDepartment:IDepartment
     {
         private SqlConnection conn=null;
-        public SqlserverUser()
+        public AccessDepartment()
         {
             string connStr = ConfigurationManager.ConnectionStrings["connStr"].ConnectionString;  //获取配置文件中的连接字符串
             conn = new SqlConnection(connStr);
@@ -22,13 +22,13 @@ namespace WindowsFormsApplication1
         ///  新增用户
         /// </summary>
         /// <param name="user">用户实体</param>
-        public void Insert(User user) 
+        public void Insert(Department department) 
         {
             
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"insert into login values(@Id,@Name)";
-            cmd.Parameters.Add(new SqlParameter("@Id",user.ID));
-            cmd.Parameters.Add(new SqlParameter("@Name", user.Name));
+            cmd.CommandText = @"insert into department values(@Id,@Name)";
+            cmd.Parameters.Add(new SqlParameter("@Id", department.ID));
+            cmd.Parameters.Add(new SqlParameter("@Name", department.Name));
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -41,10 +41,10 @@ namespace WindowsFormsApplication1
         /// </summary>
         /// <param name="id">用户id</param>
         /// <returns></returns>
-        public string GetUser(int id) 
+        public string GetDepartment(int id) 
         {
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = @"select Id,Name from login Where Id=@Id";
+            cmd.CommandText = @"select Id,Name from department Where Id=@Id";
             cmd.Parameters.Add(new SqlParameter("@Id",id));
 
             conn.Open();
