@@ -15,3 +15,4 @@ C:\Users\琚\Desktop\Qiceng\QiCeng\WindowsFormsApplication1\WindowsFormsApplicat
 C:\Users\琚\Desktop\Qiceng\QiCeng\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
 C:\Users\琚\Desktop\Qiceng\QiCeng\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
 C:\Users\琚\Desktop\Qiceng\QiCeng\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\琚\Desktop\Qiceng\QiCeng\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
